@@ -1,0 +1,950 @@
+{
+  "2": [
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.3120874762535095,
+      "iou": 0.41102458504604866,
+      "frame_index": 27
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5364891290664673,
+      "iou": 0.2611510318158019,
+      "frame_index": 28
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6727408170700073,
+      "iou": 0.2636358730073645,
+      "frame_index": 29
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.42306578159332275,
+      "iou": 0.24565238347615687,
+      "frame_index": 30
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.31346625089645386,
+      "iou": 0.50469052146672,
+      "frame_index": 41
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.3458242118358612,
+      "iou": 0.4622592147093784,
+      "frame_index": 74
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5939037203788757,
+      "iou": 0.46794997671407224,
+      "frame_index": 75
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6285985708236694,
+      "iou": 0.44314302245798864,
+      "frame_index": 76
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.4260767102241516,
+      "iou": 0.49314138849194333,
+      "frame_index": 78
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6647964715957642,
+      "iou": 0.46300665733289637,
+      "frame_index": 79
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6755657196044922,
+      "iou": 0.5283971196227468,
+      "frame_index": 80
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5427267551422119,
+      "iou": 0.5607998884668132,
+      "frame_index": 81
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.4517667293548584,
+      "iou": 0.553328010298132,
+      "frame_index": 82
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.7425791025161743,
+      "iou": 0.4886961404667239,
+      "frame_index": 84
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5467227101325989,
+      "iou": 0.5386600509794016,
+      "frame_index": 89
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.778281569480896,
+      "iou": 0.5923208218397492,
+      "frame_index": 90
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5848889350891113,
+      "iou": 0.48622130844359956,
+      "frame_index": 91
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.3771701455116272,
+      "iou": 0.453474030545182,
+      "frame_index": 163
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.4616677463054657,
+      "iou": 0.51697199854576,
+      "frame_index": 164
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6276504993438721,
+      "iou": 0.380284958969648,
+      "frame_index": 165
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.699354887008667,
+      "iou": 0.3373031654586015,
+      "frame_index": 166
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6702508926391602,
+      "iou": 0.362275924021669,
+      "frame_index": 167
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.532232940196991,
+      "iou": 0.40880751197531223,
+      "frame_index": 207
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6324735879898071,
+      "iou": 0.4158210778309541,
+      "frame_index": 208
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5317189693450928,
+      "iou": 0.3730280534833581,
+      "frame_index": 209
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.3787093460559845,
+      "iou": 0.3618792413782135,
+      "frame_index": 210
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5189553499221802,
+      "iou": 0.26334252309599915,
+      "frame_index": 216
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.363722562789917,
+      "iou": 0.27772318478591784,
+      "frame_index": 217
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5134624242782593,
+      "iou": 0.4080379092146095,
+      "frame_index": 218
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5587975382804871,
+      "iou": 0.36588312234062104,
+      "frame_index": 219
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.47498369216918945,
+      "iou": 0.5311618863799967,
+      "frame_index": 234
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.44301286339759827,
+      "iou": 0.3544828958406134,
+      "frame_index": 275
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.3927178680896759,
+      "iou": 0.6361407767606317,
+      "frame_index": 290
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.6402634382247925,
+      "iou": 0.4147340628921526,
+      "frame_index": 292
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.31282103061676025,
+      "iou": 0.4002895666066585,
+      "frame_index": 294
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.43316489458084106,
+      "iou": 0.3238808378919979,
+      "frame_index": 297
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.3509550392627716,
+      "iou": 0.307599121351894,
+      "frame_index": 298
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.43874210119247437,
+      "iou": 0.3133409036736007,
+      "frame_index": 299
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.3953137993812561,
+      "iou": 0.5446725878663679,
+      "frame_index": 316
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.6210379600524902,
+      "iou": 0.5091651775133951,
+      "frame_index": 318
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Smash shot",
+      "confidence": 0.5717818737030029,
+      "iou": 0.5191591096596084,
+      "frame_index": 319
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5048668384552002,
+      "iou": 0.4486900456288418,
+      "frame_index": 331
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.401814341545105,
+      "iou": 0.3744058930586684,
+      "frame_index": 371
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.684706449508667,
+      "iou": 0.3792684362495987,
+      "frame_index": 372
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5993700623512268,
+      "iou": 0.3194062434616665,
+      "frame_index": 377
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6773620843887329,
+      "iou": 0.35596298929128806,
+      "frame_index": 378
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.816803514957428,
+      "iou": 0.41111552392802597,
+      "frame_index": 379
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.8064897060394287,
+      "iou": 0.3568182544219664,
+      "frame_index": 380
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5667182207107544,
+      "iou": 0.3637615846142904,
+      "frame_index": 381
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.33763667941093445,
+      "iou": 0.33625608938894214,
+      "frame_index": 384
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.45415782928466797,
+      "iou": 0.2650139650065056,
+      "frame_index": 387
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.462025910615921,
+      "iou": 0.28487559615312896,
+      "frame_index": 388
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.7797141075134277,
+      "iou": 0.19553342295413673,
+      "frame_index": 389
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6436926126480103,
+      "iou": 0.3225550488992171,
+      "frame_index": 390
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.3769743740558624,
+      "iou": 0.32527104064408424,
+      "frame_index": 391
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.4206286668777466,
+      "iou": 0.36332177522141845,
+      "frame_index": 486
+    },
+    {
+      "player_id": 2,
+      "player_name": "Player 2",
+      "shot_type": "Lift Shot",
+      "confidence": 0.42075860500335693,
+      "iou": 0.42947036204650224,
+      "frame_index": 487
+    }
+  ],
+  "1": [
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.38579094409942627,
+      "iou": 0.3134897701538207,
+      "frame_index": 56
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5045398473739624,
+      "iou": 0.31129601534250306,
+      "frame_index": 57
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.34263500571250916,
+      "iou": 0.35314354465062986,
+      "frame_index": 63
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.49043306708335876,
+      "iou": 0.41304419829666594,
+      "frame_index": 64
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5744538307189941,
+      "iou": 0.3673130330997326,
+      "frame_index": 65
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.6274847984313965,
+      "iou": 0.31598170685938953,
+      "frame_index": 66
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.7795242071151733,
+      "iou": 0.38299545967816156,
+      "frame_index": 67
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.739827573299408,
+      "iou": 0.3791777656715351,
+      "frame_index": 68
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.47072967886924744,
+      "iou": 0.4103461087810754,
+      "frame_index": 69
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.4365215301513672,
+      "iou": 0.4405951777290996,
+      "frame_index": 71
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5155757665634155,
+      "iou": 0.3171563732004213,
+      "frame_index": 86
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.3475673794746399,
+      "iou": 0.3622613947259019,
+      "frame_index": 87
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Lift Shot",
+      "confidence": 0.6115701198577881,
+      "iou": 0.4432817684056562,
+      "frame_index": 137
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Lift Shot",
+      "confidence": 0.5202064514160156,
+      "iou": 0.4722321847090381,
+      "frame_index": 138
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Lift Shot",
+      "confidence": 0.37149715423583984,
+      "iou": 0.5062447466192239,
+      "frame_index": 139
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.6883160471916199,
+      "iou": 0.29290265221666906,
+      "frame_index": 149
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5004311800003052,
+      "iou": 0.21890250191077035,
+      "frame_index": 152
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.35576656460762024,
+      "iou": 0.3462141818598963,
+      "frame_index": 193
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.3268296420574188,
+      "iou": 0.3551309216098092,
+      "frame_index": 194
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.4593313932418823,
+      "iou": 0.33869347228778185,
+      "frame_index": 295
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.40205469727516174,
+      "iou": 0.43702993343289653,
+      "frame_index": 307
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.32488924264907837,
+      "iou": 0.3528747756156399,
+      "frame_index": 322
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.3595884442329407,
+      "iou": 0.32564362927466683,
+      "frame_index": 323
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.4618998169898987,
+      "iou": 0.29980208232688255,
+      "frame_index": 348
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.4005332887172699,
+      "iou": 0.29838330791019424,
+      "frame_index": 349
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.4412451684474945,
+      "iou": 0.3229491470147617,
+      "frame_index": 350
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.4741280972957611,
+      "iou": 0.36366428987769756,
+      "frame_index": 351
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.5291526317596436,
+      "iou": 0.32239457458550064,
+      "frame_index": 352
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.3632664978504181,
+      "iou": 0.31344940008273375,
+      "frame_index": 353
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.4785870313644409,
+      "iou": 0.3007039426586501,
+      "frame_index": 358
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.42823588848114014,
+      "iou": 0.29081697805871654,
+      "frame_index": 359
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.4801608920097351,
+      "iou": 0.340494596588618,
+      "frame_index": 360
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.7187638878822327,
+      "iou": 0.4370734212771882,
+      "frame_index": 362
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.544691801071167,
+      "iou": 0.5540388099140051,
+      "frame_index": 363
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.7111529111862183,
+      "iou": 0.5466769063721238,
+      "frame_index": 364
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.8080011010169983,
+      "iou": 0.5980435006645483,
+      "frame_index": 365
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5793520212173462,
+      "iou": 0.4020342458062817,
+      "frame_index": 366
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5311332941055298,
+      "iou": 0.4072019088934967,
+      "frame_index": 367
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.4115123152732849,
+      "iou": 0.30696568923213824,
+      "frame_index": 369
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.43247660994529724,
+      "iou": 0.3114238741117502,
+      "frame_index": 370
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.47685620188713074,
+      "iou": 0.2797734327642907,
+      "frame_index": 374
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Clear shot",
+      "confidence": 0.38511162996292114,
+      "iou": 0.2138021486223604,
+      "frame_index": 408
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5312361717224121,
+      "iou": 0.35055088572906273,
+      "frame_index": 418
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.6241130828857422,
+      "iou": 0.3341525045640849,
+      "frame_index": 422
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.570044994354248,
+      "iou": 0.35170305742623176,
+      "frame_index": 423
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.3648979663848877,
+      "iou": 0.5064534135716595,
+      "frame_index": 424
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.332620233297348,
+      "iou": 0.37016190798402715,
+      "frame_index": 428
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.3876553475856781,
+      "iou": 0.32758677940863484,
+      "frame_index": 430
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5087178349494934,
+      "iou": 0.33440346479187827,
+      "frame_index": 431
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.5018733739852905,
+      "iou": 0.3349550682512944,
+      "frame_index": 432
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.4804706871509552,
+      "iou": 0.4910513864946203,
+      "frame_index": 468
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.34606805443763733,
+      "iou": 0.29677071077741685,
+      "frame_index": 473
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.8247096538543701,
+      "iou": 0.3352432193482718,
+      "frame_index": 477
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.8323294520378113,
+      "iou": 0.4084726032356531,
+      "frame_index": 478
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.857633650302887,
+      "iou": 0.39107197339294775,
+      "frame_index": 479
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.8428924083709717,
+      "iou": 0.6510132639882787,
+      "frame_index": 480
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.8647914528846741,
+      "iou": 0.6969643821058873,
+      "frame_index": 481
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.6615899801254272,
+      "iou": 0.7294402190735575,
+      "frame_index": 482
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.75058913230896,
+      "iou": 0.7027474566062526,
+      "frame_index": 483
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.31215158104896545,
+      "iou": 0.3455091086154243,
+      "frame_index": 484
+    },
+    {
+      "player_id": 1,
+      "player_name": "Player 1",
+      "shot_type": "Smash shot",
+      "confidence": 0.7215901613235474,
+      "iou": 0.6269419896029592,
+      "frame_index": 485
+    }
+  ]
+}

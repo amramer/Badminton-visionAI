@@ -1,0 +1,10 @@
+streamlit
+numpy
+PyYAML
+plotly
+matplotlib
+pillow
+scipy
+reportlab
+opencv-python-headless
+tqdm

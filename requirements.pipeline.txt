@@ -1,0 +1,15 @@
+numpy
+parse
+opencv-python
+PyYAML
+tqdm
+torch
+torchvision
+torchaudio
+roboflow
+ultralytics
+scikit-learn
+matplotlib
+pillow
+supervision
+segment-anything

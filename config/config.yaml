@@ -1,0 +1,429 @@
+# Badminton Analysis System - Core Configuration
+# ============================================
+# Version: 2.1.0
+# Configures the video tracking pipeline and analysis components.
+
+# Video Paths and Parameters
+video:
+  input_video: "data/Input_videos/badminton_Japan_Open_2024.mp4"
+  court_detection_output: "outputs/tracking_results/court_detection.mp4"
+  final_output: "outputs/tracking_results/final_analysis.mp4"
+  max_frames: null
+  show_progress: true
+
+# Court Keypoints
+court_keypoints:
+  court_keypoints_path: "data/json/court_keypoints.json"
+  use_fixed_keypoints: true  # Set to true for fixed keypoints, false for model prediction
+  model_type: "resnet"
+
+# Players Tracking
+players:
+  players_tracker_model: "models/players_tracking/yolov8m.pt"
+  sam_model_type: "vit_h"
+  sam_model: "models/sam_model/sam.pth"
+  players_tracking_path: "data/json/players_tracking.json"
+  players_tracker_batch_size: 4
+
+  # Player Annotation Settings
+  annotation:
+    generate_masks: true  # Whether to generate segmentation masks
+    mask_color: "RED"      # Color for masks (RED, GREEN, BLUE, etc.)
+    mask_color_lookup: "INDEX"  # Color lookup method (INDEX, CLASS, TRACK)
+    label_color: "BLUE"    # Color for player labels
+    label_text_scale: 0.6  # Scale factor for label text
+    ellipse_thickness: 2   # Thickness of player bounding ellipse
+    ellipse_color: "BLUE"  # Color of player bounding ellipse
+    show_confidence: true  # Whether to show detection confidence
+
+# Update Player Mapping to match your video data
+player_mapping:
+  player_1:
+    id: 1
+    name: "CHOU T.C."
+  player_2:
+    id: 2
+    name: "LANIER"
+
+# Players Pose Tracking
+players_poses:
+  tracker_model: "models/players_pose/yolo_poses_model.pt"
+
+# Shuttle Ball Tracking
+ball:
+  tracker_model: "models/shuttle_ball_tracking/TrackNet_best.pt"
+  inpaint_model: "models/shuttle_ball_tracking/InpaintNet_best.pt"
+  tracking_path: "data/json/ball_tracking.json"
+  tracker_batch_size: 4
+  trail_length: 8          # Number of frames to show in ball trail
+  ball_color: "YELLOW"     # Color for ball marker
+  trail_color: "CYAN"      # Color for ball trail
+  ball_radius: 6           # Radius of ball marker in pixels
+
+# Shot Detection
+shot_detection:
+  api_key: "D5Lo2DhOX8GfRWtaGvCF" # Roboflow API key
+  project_name: "skeleton1557image-finfin" # Roboflow project name
+  version: 1 # Roboflow model version
+  shot_events_path: "data/json/shot_events.json" # Detected shots/frame 
+  player_shots_path: "data/json/player_shot_history.json" # Detected Shots of both players
+
+# Side Court Configuration
+side_court:
+  position: "top_right"  # Options: "top_right" or "bottom_left"
+  scale_factor: 1.0
+  alpha: 0.36
+
+  # Player Projection Styling
+  player_projection:
+    circle_color: [0, 0, 255]  # BGR - Red
+    font_color: [0, 0, 255]    # BGR - Red
+    radius: 8
+    font_scale: 0.9
+
+  # Ball Projection Styling
+  ball_projection:
+    circle_color: [0, 255, 255]  # BGR - Yellow
+    radius: 6
+
+# Dashboard Configuration
+dashboard:
+  # saving metrics data
+  dashboard_output_dir: "data/json" 
+  metrics_save_interval: 1  # Save metrics for example every 10 frames
+  # Metrics Panel
+  metrics_panel:
+    position: "top_left"  # Options: "top_left", "top_right", "bottom_left", "bottom_right"
+    width: 0.25  # Relative width (27% of frame width)
+    height: 0.23  # Relative height (23% of frame height)
+    background_color: [8, 8, 8]  # Dark mode
+    text_color: [255, 255, 255]  # White
+    refresh_every_n: 9   # update displayed player metrics every 7 frames
+
+  # Shot Counter Panel
+  shot_counter_panel:
+    enabled: true
+    width: 0.18
+    height: 0.09
+    margin_top: 16
+    background_color: [18, 18, 18]
+    text_color: [255, 255, 255]
+    line_color: [180, 180, 180]
+    show_per_player: true   # set true if you want P1/P2 counts
+    
+  # Shot Panel 
+  shot_panel:
+    width: 0.24
+    height: 0.25
+    position: "bottom_left"
+    background_color: [8, 8, 8]
+    text_color: [255, 255, 255]
+    line_color: [180, 180, 180]
+    max_power_kmh: 230.0
+    bar_bg_color: [70, 70, 70]
+    bar_fill_color: [250, 250, 250]
+    bar_height: 18
+    padding_x: 20
+    display_hold_frames: 25
+    speed_key_ms: "ball_velocity1"
+    refresh_every_n: 7   # update displayed ball speed every 5 frames (even if shot is held)
+
+  # Charts Panel
+  charts_panel:
+    position: "bottom_left"  # Options: "top_left", "top_right", "bottom_left", "bottom_right"
+    width: 350  # Fixed width in pixels
+    height: 200  # Fixed height in pixels
+    background_color: [20, 20, 20]  # White
+    bar_colors:  # Colors for Player 1 and Player 2 bars
+      player1: [0, 0, 255]  # Blue
+      player2: [255, 0, 0]  # Red
+
+  # General Dashboard Settings
+  alpha: 0.7  # Transparency of the overlay
+  layout: "overlay"  # Options: "overlay", "side_by_side"
+
+# Streamlit Dashboard Configuration
+streamlit_dashboard:
+    page_title: "Badminton AI Analytics"
+    custom_css: |
+      <style>
+          :root {
+              --primary-color: #ffa500;
+              --secondary-color: #111111;
+              --text-color: #ffffff;
+              --metric-bg: #222222;
+              --border-color: #333333;
+              --highlight-color: #ffc04d;
+          }
+
+          body {
+              background-color: #000000;
+              color: var(--text-color);
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          }
+
+          .main {
+              background-color: #000000;
+          }
+
+          .stats-frame {
+              position: relative;
+              border: 1px solid #444;
+              border-radius: 8px;
+              padding: 25px 20px 20px;
+              margin: 30px 0;
+              background: var(--secondary-color);
+              box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          }
+          .stats-header {
+              position: absolute;
+              top: -12px;
+              left: 25px;
+              background: var(--secondary-color);
+              padding: 0 15px;
+              color: var(--primary-color);
+              font-weight: bold;
+              font-size: 1.1rem;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+          }
+          .stats-content {
+              margin-top: 10px;
+          }
+
+          .player-card {
+              background-color: var(--secondary-color);
+              border-radius: 5px;
+              margin-bottom: 5px;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              border: 1px solid var(--border-color);
+              transition: all 0.3s ease;
+          }
+
+          .player-card:hover {
+              border-color: var(--primary-color);
+              box-shadow: 0 0 15px rgba(255,165,0,0.2);
+          }
+
+          .ball-stats {
+              background-color: var(--secondary-color);
+              border-radius: 5px;
+              margin-bottom: 35px;
+              border: 1px solid var(--border-color);
+              height: 100%;
+          }
+
+          .section-header {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: var(--primary-color);
+              margin-bottom: 15px;
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              position: relative;
+          }
+
+          .section-header::after {
+              content: "";
+              position: absolute;
+              bottom: -8px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 80px;
+              height: 3px;
+              background: var(--primary-color);
+              border-radius: 3px;
+          }
+
+          .metric-card {
+              background-color: var(--metric-bg);
+              border-radius: 10px;
+              padding: 15px;
+              margin-bottom: 15px;
+              border-left: 4px solid var(--primary-color);
+              transition: transform 0.2s ease;
+          }
+
+          .metric-card:hover {
+              transform: translateY(-3px);
+          }
+
+          .player-header {
+              display: flex;
+              align-items: center;
+              margin-bottom: 20px;
+              gap: 15px;
+              padding: 10px;
+          }
+
+          .player-image {
+              width: 220px;
+              height: 250px;
+              border-radius: 45%;
+              object-fit: cover;
+              border: 4px solid var(--primary-color);
+              margin-right: 8px;
+              transition: all 0.3s ease;
+          }
+
+          .player-image:hover {
+              transform: scale(1.02);
+              box-shadow: 0 0 20px rgba(255,165,0,0.3);
+          }
+
+          .player-name {
+              font-size: 1.4rem;
+              font-weight: 700;
+              color: var(--primary-color);
+              margin: -40px 0 5px 0;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              flex-grow: 1;
+              text-shadow: 0 0 10px rgba(255,165,0,0.3);
+          }
+
+          .player-info {
+              font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+              font-size: 16px;
+              line-height: 1.9;
+              color: #999;
+              margin-top: 11px;
+          }
+
+          .stTabs [data-baseweb="tab"] {
+              color: white;
+              font-weight: bold;
+              transition: all 0.2s ease;
+          }
+
+          .stTabs [data-baseweb="tab"]:hover {
+              color: var(--highlight-color);
+          }
+
+          .stSelectbox > div > div {
+              background-color: var(--metric-bg) !important;
+              color: white !important;
+              border: 1px solid var(--border-color) !important;
+          }
+
+          .court-image {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+              border-radius: 8px;
+              border: 1px solid var(--border-color);
+          }
+
+          @keyframes pulse {
+              0% { box-shadow: 0 0 0 0 rgba(255,165,0,0.4); }
+              70% { box-shadow: 0 0 0 10px rgba(255,165,0,0); }
+              100% { box-shadow: 0 0 0 0 rgba(255,165,0,0); }
+          }
+
+          .highlight {
+              animation: pulse 1.5s infinite;
+          }
+      </style>
+    logo_html: |
+      <div style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Courier New', monospace;
+          white-space: pre;
+          text-align: center;
+          line-height: 1.3;
+          font-size: 1.0vw;
+          letter-spacing: 1px;
+          margin-bottom: 30px;
+          color: #ffffff;
+          text-shadow: 2px 2px 4px rgba(255, 165, 0, 0.8);
+      ">
+      <pre>
+      ██████╗  █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗████████╗ ██████╗ ███╗   ██╗
+      ██╔══██╗██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║╚══██╔══╝██╔═══██╗████╗  ██║
+      ██████╔╝███████║██║  ██║██╔████╔██║██║██╔██╗ ██║   ██║   ██║   ██║██╔██╗ ██║
+      ██╔══██╗██╔══██║██║  ██║██║╚██╔╝██║██║██║╚██╗██║   ██║   ██║   ██║██║╚██╗██║
+      ██████╔╝██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚████║
+      ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+      </pre>
+          <div style="
+              font-size: 1.1vw;
+              font-weight: bold;
+              color: #FD9F00;
+              border-bottom: 3px solid #333333; /* Dark Gold-Gray */
+              padding-bottom: 7px;
+              margin-top: -10px;
+          ">
+      🎾 AI-Powered Badminton Performance Analysis System 🎾
+          </div>
+      </div>
+    sidebar_header: |
+      <div style='text-align: center; margin-bottom: 15px;'>
+          <img src="https://i.imgur.com/aANjysg.png"
+              width='145'
+              style='border-radius: 50%; border: 2px solid #FEE700; margin-bottom: 5px;'>
+          <h2 style='margin: 5px 0; color: #fff;'>Amr Amer</h2>
+          <div style='font-size: 14px; color: #999; margin-bottom: 15px;'>
+              <span style='color: #FEE700;'>●</span> Badminton Enthusiast
+              <span style='color: #FEE700;'>●</span> AI Developer
+          </div>
+      </div>
+      <div style='background: rgba(254, 231, 0, 0.1);
+                  padding: 15px;
+                  border-radius: 10px;
+                  border-left: 4px solid #FEE700;
+                  margin-bottom: 25px;'>
+          <p style='font-style: italic; margin-bottom: 5px;'>
+          "I built this because I wanted to combine my two passions -
+          badminton and technology. Every smash analyzed here comes
+          from my love of the game!"
+          </p>
+          <p style='text-align: right; font-weight: bold;'>- Amr</p>
+      </div>
+    fun_fact: |
+      Did you know?
+      - Fastest smash ever recorded: **419 km/h** (by Mads Pieler Kolding) 
+         ▶ Watch it: https://youtu.be/6G0IsJN3TCU?si=pd3Cnu6yPhPDBzvD
+      - Shuttlecocks have **16 goose feathers**
+    navigation_options: ["🔴 Live Tracking", "🔵 Advanced Stats", "🖥️ 3D Court View"]
+    navigation_help: "Switch between real-time tracking, detailed analytics, and 3D court visualization."
+    sidebar_footer: |
+      <div style="
+          text-align: center;
+          margin-top: 18px;
+          padding-top: 12px;
+          border-top: 1px solid #333;
+          color: #888;
+          font-size: 12px;
+          line-height: 1.6;
+      ">
+          <div>
+              Made with ❤️ and 🏸
+          </div>
+          <div style="margin-top: 6px; font-size: 12px; color: #777;">
+              © 2026 Amr Amer — Badminton AI Analytics
+          </div>
+      </div>
+    court_width: 385
+    court_height: 840
+    video_path: "data/Input_videos/badminton_Japan_Open_2024.mp4"
+    video_path_3d: "data/court3d.mp4"
+    court_image_path: "data/images/court-view.jpg"
+    player_data:
+      CHOU TIEN CHEN:
+        photo: "data/images/chou-tc.jpeg"
+        nationality: "Taipei, Taiwan"
+        age: 35
+        height: 180
+        world_rank: 9
+      ALEXANDRE LANIER:
+        photo: "data/images/alexlanier.jpg"
+        nationality: "France"
+        age: 20
+        height: 181
+        world_rank: 16

@@ -1,0 +1,40 @@
+name: badminton-ai
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ------------------
+  # Core
+  # ------------------
+  - python=3.10
+  - pip
+  - numpy
+  - pyyaml
+  - tqdm
+  - pillow
+  - matplotlib
+  - scikit-learn
+  - parse
+
+  # ------------------
+  # OpenCV (conda-native)
+  # ------------------
+  - opencv=4.8
+
+  # ------------------
+  # PyTorch (CPU by default)
+  # ------------------
+  - pytorch
+  - torchvision
+  - torchaudio
+
+  # ------------------
+  # Pip-only / ML ecosystem
+  # ------------------
+  - pip:
+      - roboflow
+      - ultralytics
+      - supervision
+      - segment-anything

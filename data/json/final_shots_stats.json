@@ -1,0 +1,26 @@
+{
+    "timestamp": "2026-02-08T16:26:10.599875",
+    "total_shots": 22,
+    "players": {
+        "player1": {
+            "id": 1,
+            "name": "CHOU T.C.",
+            "total_shots": 11,
+            "Smash": 8,
+            "Lift": 1,
+            "Clear": 2,
+            "Drop": 0,
+            "Unknown": 0
+        },
+        "player2": {
+            "id": 2,
+            "name": "LANIER",
+            "total_shots": 11,
+            "Smash": 4,
+            "Lift": 7,
+            "Clear": 0,
+            "Drop": 0,
+            "Unknown": 0
+        }
+    }
+}
