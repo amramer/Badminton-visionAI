@@ -22,4 +22,4 @@ Player & shuttlecock tracking • Mini-court projection • Shot type & power an
 
 ## Overview
 
-**Badminton-VisionAI** is an AI-powered system for badminton performance analysis built on modern computer vision techniques. It enables **real-time player and shuttlecock tracking**, **homography-based mini-court projection**, **shot type and power analysis**, and **interactive performance visualization** through a Streamlit dashboard.
+**Badminton-VisionAI** is an AI-powered system for badminton performance analysis built on modern computer vision techniques. It enables **player and shuttlecock tracking**, **homography-based mini-court projection**, **shot type and power analysis**, and **interactive performance visualization** through a Streamlit dashboard.
