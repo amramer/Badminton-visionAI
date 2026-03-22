@@ -29,5 +29,5 @@ Player & shuttlecock tracking • Mini-court projection • Shot type & power an
 </p>
 
 <p align="center">
-  <img src="demos/badminton-visionAI_01.gif" width="100%">
+  <img src="demos/badminton-visionAI_02.gif" width="100%">
 </p>
