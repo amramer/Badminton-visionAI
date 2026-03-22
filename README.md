@@ -26,8 +26,12 @@ Player & shuttlecock tracking • Mini-court projection • Shot type & power an
 
 <p align="center">
   <img src="demos/badminton-visionAI_01.gif" width="100%">
+  <br>
+  <strong>Tracking</strong> – Player tracking • Shuttle tracking • Shot detection • Court mapping.
 </p>
 
 <p align="center">
-  <img src="demos/badminton-visionAI_02.gif" width="100%">
+  <img src="demos/badminton-visionAI_01.gif" width="100%">
+  <br>
+  <strong>Analytics Dashboard</strong> – Player statistics • Heatmaps • Shot analysis • Coach-ready report.
 </p>
