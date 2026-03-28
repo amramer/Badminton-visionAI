@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="Badminton-VisionAI Logo" width="280"/>
+<img src="assets/logo.png" alt="Badminton-VisionAI Logo" width="480"/>
 
 
 ### AI-Powered Badminton Performance Analysis System
