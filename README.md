@@ -13,7 +13,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.txt)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)]()
 
-*Real-time computer vision analytics for professional badminton performance*
+*Computer vision analytics for professional badminton performance*
 
 **[Features](#-features) · [Architecture](#-system-architecture) · [Quick Start](#-quick-start) · [Installation](#-installation) · [Usage](#-usage) · [Dashboard](#-dashboard) · [Roadmap](#-roadmap)**
 
