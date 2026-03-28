@@ -3,7 +3,7 @@
 <img src="assets/logo.png" alt="Badminton-VisionAI Logo" width="450"/>
 
 
-### AI-Powered Badminton Performance Analysis System
+#### AI-Powered Badminton Performance Analysis System
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
