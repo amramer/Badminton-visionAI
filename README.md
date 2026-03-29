@@ -83,12 +83,10 @@ Heatmaps · Shot statistics · Coach report
 ## 🏗️ System Architecture
 
 <div align="center">
-
-### Tracking
 <img src="assets/system-architecture-transparentbg.png">
-
 </div>
 
+---
 
 ### Project Structure
 
