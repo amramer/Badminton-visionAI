@@ -60,9 +60,10 @@ Heatmaps · Shot statistics · Coach report
 - **Rally Segmentation** — Automatic rally start/end detection and per-rally statistics
 
 ### 📊 Performance Dashboard
-- **Interactive Streamlit UI** — Upload video, run pipeline, explore results in-browser
-- **Per-Player Statistics** — Shot counts, movement distances, court coverage, rally durations
-- **Coach-Ready Reports** — Exportable PDF/CSV summary for post-match review sessions
+- **Interactive Streamlit UI** — Upload video, run the analysis pipeline, and explore results directly in the browser
+- **Live Video Metrics** — Real-time overlays showing player velocity, acceleration, and shot type predictions on video frames
+- **Per-Player Statistics** — Shot counts, movement distances, court coverage, rally durations, and shuttlecock analytics
+- **Coach-Ready Reports** — Exportable PDF summaries with performance insights, tactical patterns, and strategy recommendations for player improvement
 
 ### 🐳 Production-Ready
 - **Dual Dockerfile setup** — Separate optimized containers for the CV pipeline and the web dashboard
