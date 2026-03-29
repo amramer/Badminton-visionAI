@@ -28,12 +28,12 @@
 <div align="center">
 
 ### Tracking
-<img src="demos/badminton-visionAI_01.gif" width="700">
+<img src="demos/badminton-visionAI_01.gif" width="900">
 
 Player & shuttle tracking · Court mapping · Shot detection
 
 ### Analytics
-<img src="demos/badminton-visionAI_02.gif" width="700">
+<img src="demos/badminton-visionAI_02.gif" width="900">
 
 Heatmaps · Shot statistics · Coach report
 
