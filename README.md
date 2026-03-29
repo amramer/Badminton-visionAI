@@ -82,35 +82,15 @@ Heatmaps · Shot statistics · Coach report
 
 ## 🏗️ System Architecture
 
-```
-                    ┌─────────────────────────────────────────────────────────────┐
-                    │                    Input: Match Video                       │
-                    └────────────────────────────┬────────────────────────────────┘
-                                                 │
-                                  ┌──────────────▼──────────────┐
-                                  │      Preprocessing Layer    │ 
-                                  └──────────────┬──────────────┘
-                                                 │
-                             ┌───────────────────┼───────────────────┐
-                             │                   │                   │
-                    ┌────────▼────────┐ ┌────────▼────────┐ ┌────────▼────────┐
-                    │  Player Tracker │ │Shuttle Tracker  │ │ Court Detector  │
-                    │(YOLO+ByteTrack) │ │   (TrackNet)    │ │  (Homography)   │
-                    └────────┬────────┘ └────────┬────────┘ └────────┬────────┘
-                             │                   │                   │
-                             └───────────────────▼───────────────────┘
-                                                 │
-                                  ┌──────────────▼──────────────┐
-                                  │       Analysis Engine       │
-                                  │  Shot detection · Heatmaps  │
-                                  │  Speed · Rally segmentation │
-                                  └──────────────┬──────────────┘
-                                                 │
-                                  ┌──────────────▼──────────────┐
-                                  │     Streamlit Dashboard     │
-                                  │   Interactive visualizations│
-                                  │  Stats tables · Coach Report│
-                                  └─────────────────────────────┘
+
+
+<div align="center">
+
+### Tracking
+<img src="assets/system-architecture-transparentbg.png">
+
+</div>
+
 ```
 
 ### Project Structure
