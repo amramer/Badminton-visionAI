@@ -44,7 +44,7 @@ Heatmaps · Shot statistics · Coach report
 ## ✨ Features
 
 ### 🎥 Computer Vision Pipeline
-- **Player Detection & Tracking** — Player detection using YOLO, integrated with ByteTrack for robust multi-player tracking and persistent IDs across frames.
+- **Player Detection & Tracking** — Player detection using YOLO, integrated with ByteTrack for robust multi-player tracking and persistent IDs across frames
 - **Shuttlecock Tracking** — TrackNet-powered trajectory prediction handling occlusions and motion blur
 - **Court Detection** — Automatic keypoint detection and homography estimation for court-plane normalization
 - **Segment Anything (SAM)** — Precise player segmentation for fine-grained movement analysis
