@@ -49,21 +49,21 @@ Heatmaps · Shot statistics · Coach report
 - **Court Detection** — Automatic keypoint detection and homography estimation for court-plane normalization
 - **Segment Anything (SAM)** — Precise player segmentation for fine-grained movement analysis
 
-<hr style="opacity:0.2;">
+<p align="center">• • •</p>
 
 ### 📐 Spatial Analysis
 - **Homography Projection** — Transforms camera-perspective player positions onto a canonical 2D mini-court view
 - **Heatmap Generation** — Positional frequency maps revealing court coverage patterns per player
 - **Trajectory Reconstruction** — Smoothed shuttlecock path with physics-aware interpolation for occluded frames
 
-<hr style="opacity:0.2;">
+<p align="center">• • •</p>
 
 ### 🏸 Shot Intelligence
 - **Shot Type Classification** — Detects smash, drop, clear, drive, net kill, and serve automatically
 - **Power Estimation** — Velocity-based shuttlecock speed computation at moment of impact
 - **Rally Segmentation** — Automatic rally start/end detection and per-rally statistics
 
-<hr style="opacity:0.2;">
+<p align="center">• • •</p>
 
 ### 📊 Performance Dashboard
 - **Interactive Streamlit UI** — Upload video, run the analysis pipeline, and explore results directly in the browser
@@ -71,7 +71,7 @@ Heatmaps · Shot statistics · Coach report
 - **Per-Player Statistics** — Shot counts, movement distances, court coverage, rally durations, and shuttlecock analytics
 - **Coach-Ready Reports** — Exportable PDF summaries with performance insights, tactical patterns, and strategy recommendations for player improvement
 
-<hr style="opacity:0.2;">
+<p align="center">• • •</p>
 
 ### 🐳 Production-Ready
 - **Dual Dockerfile setup** — Separate optimized containers for the CV pipeline and the web dashboard
