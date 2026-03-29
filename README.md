@@ -88,15 +88,14 @@ Heatmaps · Shot statistics · Coach report
                     └────────────────────────────┬────────────────────────────────┘
                                                  │
                                   ┌──────────────▼──────────────┐
-                                  │      Preprocessing Layer    │
-                                  │  Frame extraction · Resize  │
+                                  │      Preprocessing Layer    │ 
                                   └──────────────┬──────────────┘
                                                  │
                              ┌───────────────────┼───────────────────┐
                              │                   │                   │
                     ┌────────▼────────┐ ┌────────▼────────┐ ┌────────▼────────┐
                     │  Player Tracker │ │Shuttle Tracker  │ │ Court Detector  │
-                    │  (YOLO + SAM)   │ │   (TrackNet)    │ │  (Homography)   │
+                    │(YOLO+ByteTrack) │ │   (TrackNet)    │ │  (Homography)   │
                     └────────┬────────┘ └────────┬────────┘ └────────┬────────┘
                              │                   │                   │
                              └───────────────────▼───────────────────┘
@@ -110,7 +109,7 @@ Heatmaps · Shot statistics · Coach report
                                   ┌──────────────▼──────────────┐
                                   │     Streamlit Dashboard     │
                                   │   Interactive visualizations│
-                                  │   Stats tables · Export PDF │
+                                  │  Stats tables · Coach Report│
                                   └─────────────────────────────┘
 ```
 
