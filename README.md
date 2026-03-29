@@ -82,8 +82,6 @@ Heatmaps · Shot statistics · Coach report
 
 ## 🏗️ System Architecture
 
-
-
 <div align="center">
 
 ### Tracking
@@ -91,7 +89,6 @@ Heatmaps · Shot statistics · Coach report
 
 </div>
 
-```
 
 ### Project Structure
 
