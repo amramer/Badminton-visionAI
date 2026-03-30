@@ -92,25 +92,39 @@ Heatmap · Players & Shots statistics · Coach report
 
 ```
 Badminton-visionAI/
-├── tracking/               # Player & shuttlecock tracking modules
-├── shot_detection/         # Shot type classification & power estimation
-├── analysis/               # Heatmaps, rally segmentation, statistics
-├── webapp/                 # Streamlit dashboard components
-├── utils/                  # Shared utilities (I/O, drawing, transforms)
-├── constants/              # Court dimensions, class labels, thresholds
-├── config/                 # YAML configuration files
-├── models/                 # Pretrained weights directory
-├── notebooks/              # Exploratory notebooks & experiments
-├── data/                   # Sample data and test clips
-├── demos/                  # Demo GIFs for README
-├── outputs/                # Pipeline output artifacts
-├── docs/                   # Extended documentation
-├── logs/                   # Runtime logs
-├── app.py                  # Pipeline entry point
-├── web.py                  # Streamlit dashboard entry point
-├── Dockerfile.pipeline     # CV pipeline container
-├── Dockerfile.web          # Web dashboard container
-├── environment.yml         # Conda environment
+├── tracking/                     # Tracking modules
+│   ├── court_detection/          # Keypoint detection & homography
+│   ├── players_tracking/         # YOLO-based player tracking
+│   ├── players_poses/            # Pose estimation (YOLO Pose)
+│   └── shuttle_tracking/         # TrackNet ball tracking (models, predict, dataset)
+├── shot_detection/               # Shot classification, power estimation, stabilizer
+├── analysis/                     # Metrics, heatmaps, side-court projection, dashboard
+├── webapp/                       # Streamlit dashboard
+│   ├── pages/                    # match_replay, court_explorer, coach_report
+│   ├── tabs/                     # positioning, shot_profile
+│   └── reports/                  # PDF report helpers and page builders
+├── utils/                        # Shared utilities (I/O, video, logger, conversions)
+├── constants/                    # Court dimensions, player heights
+├── config/                       # config.yaml, streamlitconfig.yaml
+├── models/                       # Pretrained weights
+│   ├── players_tracking/         # yolov8m.pt
+│   ├── players_poses/            # yolo_poses_model.pt
+│   ├── sam_model/                # sam.pth
+│   └── shuttle_ball_tracking/    # TrackNet_best.pt, InpaintNet_best.pt
+├── notebooks/                    # data_exploration.ipynb, training_models.ipynb
+├── data/
+│   ├── Input_videos/             # Drop your match videos here
+│   ├── json/                     # Pipeline output JSON (read by dashboard)
+│   └── images/                   # Sample court/player images
+├── outputs/
+│   └── tracking_results/         # Annotated output videos
+├── logs/                         # Runtime logs per module
+├── docs/                         # Extended documentation
+├── app.py                        # ← Run this FIRST (CV pipeline entry point)
+├── web.py                        # ← Run this SECOND (Streamlit dashboard)
+├── Dockerfile.pipeline           # CV pipeline container
+├── Dockerfile.web                # Web dashboard container
+├── environment.yml               # Conda environment
 ├── requirements.pipeline.txt
 └── requirements.web.txt
 ```
