@@ -35,7 +35,7 @@ Player & shuttle tracking · Court mapping · Shot detection
 ### Analytics
 <img src="demos/badminton-visionAI_02.gif" width="900">
 
-Heatmaps · Shot statistics · Coach report
+Heatmap · Players & Shots statistics · Coach report
 
 </div>
 
