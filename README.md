@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![YOLO](https://img.shields.io/badge/Ultralytics-YOLO-00FFFF?style=flat-square)](https://ultralytics.com)
-[![Roboflow](https://img.shields.io/badge/Shot_Detection-Roboflow-6706CE?style=flat-square&logo=roboflow&logoColor=white)](https://roboflow.com)
+[![Roboflow](https://img.shields.io/badge/Annotations-Roboflow-6706CE?style=flat-square&logo=roboflow&logoColor=white)](https://roboflow.com)
 [![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
 [![Version](https://img.shields.io/badge/Version-2.1.0-blue?style=flat-square)]()
