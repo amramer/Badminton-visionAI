@@ -8,8 +8,10 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![YOLO](https://img.shields.io/badge/Ultralytics-YOLO-00FFFF?style=flat-square)](https://ultralytics.com)
+[![Roboflow](https://img.shields.io/badge/Shot_Detection-Roboflow-6706CE?style=flat-square&logo=roboflow&logoColor=white)](https://roboflow.com)
 [![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![Version](https://img.shields.io/badge/Version-2.1.0-blue?style=flat-square)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.txt)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)]()
 
@@ -45,16 +47,18 @@ Heatmap · Players & Shots statistics · Coach report
 
 ### 🎥 Computer Vision Pipeline
 - **Player Detection & Tracking** — Player detection using YOLO, integrated with ByteTrack for robust multi-player tracking and persistent IDs across frames
-- **Shuttlecock Tracking** — TrackNet-powered trajectory prediction handling occlusions and motion blur
-- **Court Detection** — Automatic keypoint detection and homography estimation for court-plane normalization
+- **Shuttlecock Tracking** — TrackNet-powered trajectory prediction with InpaintNet for occluded frame recovery
+- **Court Detection** — Automatic ResNet-based keypoint detection and RANSAC homography estimation for court-plane normalisation
 - **Segment Anything (SAM)** — Precise player segmentation for fine-grained movement analysis
+- **Side Court Visualisation** — Real-time mini-court overlay projected via homography, rendered on every output frame
 
 <p align="center">• • •</p>
 
 ### 📐 Spatial Analysis
-- **Homography Projection** — Transforms camera-perspective player positions onto a canonical 2D mini-court view
+- **Homography Projection** — Transforms camera-perspective player and ball positions onto a canonical 2D mini-court view
 - **Heatmap Generation** — Positional frequency maps revealing court coverage patterns per player
-- **Trajectory Reconstruction** — Smoothed shuttlecock path with physics-aware interpolation for occluded frames
+- **Trajectory Reconstruction** — Smoothed shuttlecock path with InpaintNet interpolation for occluded frames
+- **Ball Trail Rendering** — Configurable trail length and colour overlaid on output video
 
 <p align="center">• • •</p>
 
@@ -66,16 +70,17 @@ Heatmap · Players & Shots statistics · Coach report
 <p align="center">• • •</p>
 
 ### 📊 Performance Dashboard
-- **Interactive Streamlit UI** — Upload video, run the analysis pipeline, and explore results directly in the browser
-- **Live Video Metrics** — Real-time overlays showing player velocity, acceleration, and shot type predictions on video frames
+- **Interactive Streamlit UI** — Run the analysis pipeline, and explore results directly in the browser
+- **Live Video Metrics** — Annotated output video with per-frame player stats, shot type, and speed overlays
 - **Per-Player Statistics** — Shot counts, movement distances, court coverage, rally durations, and shuttlecock analytics
-- **Coach-Ready Reports** — Exportable PDF summaries with performance insights, tactical patterns, and strategy recommendations for player improvement
+- **Coach-Ready Reports** — Exportable PDF summaries with performance insights and tactical recommendations
 
 <p align="center">• • •</p>
 
 ### 🐳 Production-Ready
 - **Dual Dockerfile setup** — Separate optimized containers for the CV pipeline and the web dashboard
 - **Modular architecture** — Cleanly decoupled modules for tracking, analysis, detection, and visualization
+- **Smart caching** — Pipeline skips re-processing if tracking JSON files already exist on disk
 - **Conda + pip support** — Both `environment.yml` and `requirements*.txt` provided
 
 ---
@@ -152,7 +157,7 @@ docker run --gpus all \
   --input data/Input_videos/your_match.mp4 --output outputs/
 ```
 
-This produces the annotated video and all JSON data files consumed by the dashboard.
+This runs all 9 pipeline stages and produces the annotated video and all JSON data files consumed by the dashboard.
 
 ### Step 2 — Launch the Web Dashboard
 
@@ -212,141 +217,217 @@ docker build -f Dockerfile.web -t badminton-web .
 | PyTorch | ≥ 2.0 (CUDA recommended) |
 | OpenCV | ≥ 4.8 |
 | Streamlit | ≥ 1.32 |
+| Supervision | latest |
 | CUDA (optional) | ≥ 11.8 for GPU inference |
 
 ---
-
 ## 📖 Usage
 
 ### 1. Run the Full Pipeline on a Video
 
+Place your video in `data/Input_videos/`, update `video.input_video` in `config/config.yaml`, then run:
+
 ```bash
-python app.py --input data/sample_match.mp4 --output outputs/
+python app.py
 ```
 
-**Key arguments:**
+The pipeline executes 9 sequential stages — initialisation, config loading, video decoding, court detection, player tracking, ball tracking, shot detection, side-court visualisation, and dashboard generation — writing all results to `data/json/` and the annotated video to `outputs/tracking_results/`.
 
-| Argument | Default | Description |
+> **Smart caching:** If `data/json/players_tracking.json` or `data/json/ball_tracking.json` already exist from a previous run, those tracking stages are skipped automatically. Delete the relevant JSON files to force re-processing.
+
+**Key `config/config.yaml` settings:**
+
+| Key | Default | Description |
 |---|---|---|
-| `--input` | — | Path to input video file |
-| `--output` | `outputs/` | Directory for output files |
-| `--conf` | `0.5` | YOLO detection confidence threshold |
-| `--device` | `cuda` | Inference device (`cuda` / `cpu`) |
-| `--save-video` | `False` | Save annotated output video |
-| `--config` | `config/default.yaml` | Path to config file |
+| `video.input_video` | `data/Input_videos/badminton_Japan_Open_2024.mp4` | Path to input video |
+| `video.final_output` | `outputs/tracking_results/final_analysis.mp4` | Path for annotated output video |
+| `video.max_frames` | `null` | Limit frames processed (`null` = all) |
+| `video.show_progress` | `true` | Show tqdm progress bars |
+| `players.players_tracker_batch_size` | `4` | YOLO inference batch size |
+| `ball.tracker_batch_size` | `4` | TrackNet inference batch size |
+| `shot_detection.api_key` | — | Your Roboflow API key |
+| `shot_detection.conf_threshold` | `0.3` | Shot detection confidence threshold |
+| `court_keypoints.use_fixed_keypoints` | `true` | Load keypoints from JSON instead of running model |
 
 ### 2. Launch the Interactive Dashboard
 
 ```bash
+# Only after app.py has finished successfully
 streamlit run web.py
 ```
 
-Then navigate to `http://localhost:8501`, upload a video, and explore results interactively.
+Navigate to `http://localhost:8501`. The dashboard reads `data/json/` and `outputs/tracking_results/` — it does **not** re-run the pipeline.
 
 ### 3. Run via Python API
 
 ```python
-from tracking.player_tracker import PlayerTracker
-from tracking.shuttle_tracker import ShuttleTracker
-from analysis.heatmap import HeatmapGenerator
+from tracking.players_tracking.player_tracking import PlayerTracker
+from tracking.shuttle_tracking.ball_tracking import BallTracker
+from analysis.sidecourt import SideCourt
+from config import load_config
+
+config = load_config()
 
 # Initialize components
-player_tracker = PlayerTracker(conf=0.5, device="cuda")
-shuttle_tracker = ShuttleTracker()
+player_tracker = PlayerTracker(
+    model_path=config["players"]["players_tracker_model"],
+    batch_size=config["players"].get("players_tracker_batch_size", 4),
+    frame_rate=fps,
+)
 
-# Run on a video
-results = player_tracker.track("data/match.mp4")
-heatmap = HeatmapGenerator(results).generate()
-heatmap.save("outputs/heatmap.png")
+ball_tracker = BallTracker(
+    tracking_model_path=config["ball"]["tracker_model"],
+    inpaint_model_path=config["ball"]["inpaint_model"],
+    batch_size=config["ball"].get("tracker_batch_size", 4),
+    frame_rate=fps
+)
 ```
 
 ---
 
 ## 📊 Dashboard
 
-The Streamlit dashboard provides an end-to-end interactive experience:
+The Streamlit dashboard provides an end-to-end interactive experience for exploring pipeline results:
 
 | Panel | Description |
 |---|---|
-| 📹 **Video Upload** | Drop in any MP4 match recording |
-| 🎯 **Tracking View** | Annotated video with bounding boxes and IDs |
-| 🗺️ **Mini-Court Map** | Real-time homographic court projection |
-| 🔥 **Heatmaps** | Per-player court coverage and positioning frequency |
-| 📈 **Shot Statistics** | Shot type breakdown, rally lengths, speed distribution |
-| 📄 **Export** | Download CSV data or PDF coach report |
+| 🎯 **Tracking View** | Annotated output video with bounding boxes, SAM masks, player IDs, ball trail, and shot overlays |
+| 🗺️ **Court Explorer** | Interactive homographic court projection with player and ball positions |
+| 🔥 **Positioning Tab** | Per-player heatmaps showing court coverage and movement patterns |
+| 📈 **Shot Profile Tab** | Shot type breakdown, speed distribution, and per-player shot history |
+| 🎬 **Match Replay** | Frame-by-frame playback with all tracking overlays |
+| 📄 **Coach Report** | Exportable PDF with performance insights and tactical recommendations |
 
 ---
 
 ## 🧠 Models & Methods
 
-| Component | Model / Method | Reference |
+| Component | Model / Method | Weight file |
 |---|---|---|
-| Player Detection | YOLOv8 (Ultralytics) | [Paper](https://arxiv.org/abs/2304.00501) |
-| Player Segmentation | SAM (Segment Anything) | [Paper](https://arxiv.org/abs/2304.02643) |
-| Shuttle Tracking | TrackNet | [Paper](https://arxiv.org/abs/1907.10872) |
-| Court Detection | Homography estimation (OpenCV) | — |
-| Shot Classification | Custom CNN/rule-based on trajectory features | — |
-| Tracking Algorithm | SORT / ByteTrack-style assignment | — |
+| Player Detection | YOLOv8m (Ultralytics) | `models/players_tracking/yolov8m.pt` |
+| Player Segmentation | SAM ViT-H (Segment Anything) | `models/sam_model/sam.pth` |
+| Player Poses | YOLO Pose | `models/players_pose/yolo_poses_model.pt` |
+| Shuttle Tracking | TrackNet | `models/shuttle_ball_tracking/TrackNet_best.pt` |
+| Occlusion Recovery | InpaintNet | `models/shuttle_ball_tracking/InpaintNet_best.pt` |
+| Court Detection | ResNet keypoints + RANSAC homography | Fixed keypoints via `data/json/court_keypoints.json` |
+| Shot Classification | Roboflow-hosted model (skeleton features) | Configured via `shot_detection` block in config |
+| Tracking Algorithm | SORT / ByteTrack-style ID assignment | Via `supervision` library |
 
 ---
 
 ## ⚙️ Configuration
 
-All pipeline parameters are controlled via `config/default.yaml`:
+All pipeline parameters live in `config/config.yaml`. A separate `config/streamlitconfig.yaml` governs dashboard display settings. Below is an annotated summary of the key sections:
 
 ```yaml
-tracking:
-  player_conf: 0.5          # YOLO confidence threshold
-  iou_threshold: 0.45       # NMS IoU threshold
-  max_age: 30               # Max frames before track is dropped
+# Video paths
+video:
+  input_video: "data/Input_videos/badminton_Japan_Open_2024.mp4"
+  court_detection_output: "outputs/tracking_results/court_detection.mp4"
+  final_output: "outputs/tracking_results/final_analysis.mp4"
+  max_frames: null        # null = process entire video
+  show_progress: true
 
-shuttle:
-  model_path: models/tracknet.pth
-  sequence_length: 3        # Input frames for TrackNet
+# Court keypoint detection
+court_keypoints:
+  court_keypoints_path: "data/json/court_keypoints.json"
+  use_fixed_keypoints: true   # true = load from JSON, false = run ResNet model
+  model_type: "resnet"
 
-court:
-  keypoint_model: models/court_kp.pth
-  homography_method: RANSAC
+# Player tracking & annotation
+players:
+  players_tracker_model: "models/players_tracking/yolov8m.pt"
+  sam_model_type: "vit_h"
+  sam_model: "models/sam_model/sam.pth"
+  players_tracking_path: "data/json/players_tracking.json"
+  players_tracker_batch_size: 4
+  annotation:
+    generate_masks: true
+    mask_color: "RED"
+    label_color: "BLUE"
+    ellipse_color: "BLUE"
+    show_confidence: true
 
-analysis:
-  heatmap_resolution: [640, 360]
-  shot_min_speed_kmh: 50    # Min shuttle speed to register as shot
+# Player name mapping (update to match your video)
+player_mapping:
+  player_1:
+    id: 1
+    name: "CHOU T.C."
+  player_2:
+    id: 2
+    name: "LANIER"
+
+# Shuttlecock tracking
+ball:
+  tracker_model: "models/shuttle_ball_tracking/TrackNet_best.pt"
+  inpaint_model: "models/shuttle_ball_tracking/InpaintNet_best.pt"
+  tracking_path: "data/json/ball_tracking.json"
+  tracker_batch_size: 4
+  trail_length: 8         # number of frames to show in ball trail
+  ball_color: "YELLOW"
+  trail_color: "CYAN"
+  ball_radius: 6
+
+# Shot detection via Roboflow
+shot_detection:
+  api_key: "YOUR_ROBOFLOW_API_KEY"
+  project_name: "your-roboflow-project"
+  version: 1
+  shot_events_path: "data/json/shot_events.json"
+  player_shots_path: "data/json/player_shot_history.json"
+  conf_threshold: 0.3
+
+# Mini-court overlay
+side_court:
+  position: "top_right"   # "top_right" or "bottom_left"
+  scale_factor: 1.0
+  alpha: 0.36
+
+# Dashboard overlay panels
+dashboard:
+  dashboard_output_dir: "data/json"
+  metrics_save_interval: 1   # save metrics every N frames (1 = every frame)
 ```
 
 ---
 
 ## 📁 Output Files
 
-After running the pipeline, the `outputs/` directory contains:
+After `app.py` completes, outputs are written to two locations that `web.py` reads directly:
 
 ```
-outputs/
-├── tracking_results/
-│   ├── player_tracks.json      # Frame-by-frame player positions & IDs
-│   ├── shuttle_trajectory.json # Shuttlecock trajectory data
-│   └── annotated_video.mp4     # Optional annotated video
-├── analysis/
-│   ├── heatmap_player1.png
-│   ├── heatmap_player2.png
-│   ├── shot_stats.csv
-│   └── rally_segments.json
-└── report/
-    └── match_report.pdf
+data/json/                           # Structured results (read by web.py)
+├── players_tracking.json            # Frame-by-frame player positions & IDs
+├── players_final_metrics.json       # Per-player aggregated statistics
+├── player_shot_history.json         # Full shot timeline per player
+├── ball_tracking.json               # Raw shuttlecock trajectory per frame
+├── ball_final_metrics.json          # Shuttlecock speed & flight metrics
+├── shot_events.json                 # Detected shot events with type & frame index
+├── final_shots_stats.json           # Aggregated shot type statistics
+└── court_keypoints.json             # Detected court keypoints for homography
+
+outputs/tracking_results/            # Video outputs (read by web.py)
+├── final_analysis.mp4               # Fully annotated video (all overlays)
+└── court_detection.mp4              # Court keypoint detection visualisation
 ```
+
+> **Caching:** If `players_tracking.json` or `ball_tracking.json` already exist, those pipeline stages are skipped on the next run. Delete these files to force a fresh tracking pass.
 
 ---
 
 ## 🗺️ Roadmap
 
-- [x] Player detection and tracking (YOLO + SAM)
-- [x] Shuttlecock tracking (TrackNet)
-- [x] Court homography projection
-- [x] Shot type and power estimation
-- [x] Streamlit interactive dashboard
-- [x] Docker containerization
+- [x] Player detection and tracking (YOLOv8m + SAM ViT-H)
+- [x] Shuttlecock tracking (TrackNet + InpaintNet)
+- [x] Court keypoint detection and homography projection
+- [x] Shot type classification (Roboflow) and power estimation
+- [x] Side-court mini overlay on output video
+- [x] Streamlit interactive dashboard (replay, heatmaps, shot profile, coach report)
+- [x] Docker containerisation (pipeline + dashboard)
+- [x] Smart JSON caching to skip re-processing
 - [ ] Multi-camera support and view stitching
 - [ ] Real-time inference mode (RTSP / webcam input)
-- [ ] Pose estimation integration (MediaPipe / ViTPose)
+- [ ] Pose estimation deeper integration (MediaPipe / ViTPose)
 - [ ] 3D trajectory reconstruction
 - [ ] REST API endpoint for external integrations
 - [ ] Mobile-friendly dashboard (PWA)
@@ -365,6 +446,37 @@ Contributions are very welcome! Here's how to get involved:
 5. Open a Pull Request — describe what you did and why
 
 Please check open [Issues](https://github.com/amramer/Badminton-visionAI/issues) before starting work to avoid duplication.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see [LICENSE.txt](LICENSE.txt) for details. You are free to use, modify, and distribute with attribution.
+
+---
+
+## 🙏 Acknowledgements
+
+- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) — Player detection and pose estimation backbone
+- [TrackNet](https://github.com/ChgygLin/TrackNet-pytorch) — Shuttlecock tracking architecture
+- [InpaintNet](https://github.com/ChgygLin/TrackNet-pytorch) — Occlusion recovery for ball trajectory
+- [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything) — Player segmentation (ViT-H)
+- [Roboflow](https://roboflow.com) — Shot type classification model hosting
+- [Supervision](https://github.com/roboflow/supervision) — Annotation and tracking utilities
+- [Streamlit](https://streamlit.io) — Dashboard framework
+- [OpenCV](https://opencv.org) — Image processing and homography computation
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Amr Amer](https://github.com/amramer)
+
+⭐ **If this project helps you, please give it a star!** ⭐
+
+[![GitHub stars](https://img.shields.io/github/stars/amramer/Badminton-visionAI?style=social)](https://github.com/amramer/Badminton-visionAI)
+
+</div>to avoid duplication.
 
 ---
 
