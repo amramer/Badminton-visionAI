@@ -457,14 +457,14 @@ This project is licensed under the **MIT License** — see [LICENSE.txt](LICENSE
 
 ## 🙏 Acknowledgements
 
-- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) — Player detection and pose estimation backbone
-- [TrackNet](https://github.com/ChgygLin/TrackNet-pytorch) — Shuttlecock tracking architecture
-- [InpaintNet](https://github.com/ChgygLin/TrackNet-pytorch) — Occlusion recovery for ball trajectory
-- [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything) — Player segmentation (ViT-H)
-- [Roboflow](https://roboflow.com) — Shot type classification model hosting
-- [Supervision](https://github.com/roboflow/supervision) — Annotation and tracking utilities
-- [Streamlit](https://streamlit.io) — Dashboard framework
-- [OpenCV](https://opencv.org) — Image processing and homography computation
+- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) 
+- [TrackNet](https://github.com/ChgygLin/TrackNet-pytorch) 
+- [InpaintNet](https://github.com/ChgygLin/TrackNet-pytorch) 
+- [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything)
+- [Roboflow](https://roboflow.com)
+- [Supervision](https://github.com/roboflow/supervision)
+- [Streamlit](https://streamlit.io) 
+- [OpenCV](https://opencv.org)
 
 ---
 
