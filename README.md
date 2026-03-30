@@ -133,36 +133,56 @@ Badminton-visionAI/
 
 ## 🚀 Quick Start
 
-The fastest way to run Badminton-VisionAI is via Docker:
+Badminton-VisionAI runs in **two sequential steps**: the CV pipeline processes your video and writes all output data first, then the web dashboard reads those outputs for interactive exploration.
+
+### Step 1 — Run the CV Pipeline
 
 ```bash
 # Clone the repository
 git clone https://github.com/amramer/Badminton-visionAI.git
 cd Badminton-visionAI
 
-# Build & run the web dashboard
+# Build and run the pipeline container
+docker build -f Dockerfile.pipeline -t badminton-pipeline .
+docker run --gpus all \
+  -v $(pwd)/data/Input_videos:/app/data/Input_videos \
+  -v $(pwd)/outputs:/app/outputs \
+  -v $(pwd)/data/json:/app/data/json \
+  badminton-pipeline \
+  --input data/Input_videos/your_match.mp4 --output outputs/
+```
+
+This produces the annotated video and all JSON data files consumed by the dashboard.
+
+### Step 2 — Launch the Web Dashboard
+
+```bash
+# Build and run the dashboard container (after the pipeline has finished)
 docker build -f Dockerfile.web -t badminton-web .
-docker run -p 8501:8501 badminton-web
+docker run -p 8501:8501 \
+  -v $(pwd)/outputs:/app/outputs \
+  -v $(pwd)/data/json:/app/data/json \
+  badminton-web
 
 # Open your browser at http://localhost:8501
 ```
 
 ---
 
+
 ## 🛠️ Installation
 
-### Option A — Conda (Recommended)
+### Option A — Conda (Recommended for full stack)
 
 ```bash
 git clone https://github.com/amramer/Badminton-visionAI.git
 cd Badminton-visionAI
 
-# Create and activate environment
 conda env create -f environment.yml
 conda activate badminton-visionai
 ```
 
-### Option B — pip (Pipeline only)
+### Option B — pip (CV pipeline only)
 
 ```bash
 pip install -r requirements.pipeline.txt
@@ -174,13 +194,13 @@ pip install -r requirements.pipeline.txt
 pip install -r requirements.web.txt
 ```
 
-### Option D — Docker (Production)
+### Option D — Docker (Production, two containers)
 
 ```bash
-# CV Pipeline
+# Container 1 — CV pipeline (run first)
 docker build -f Dockerfile.pipeline -t badminton-pipeline .
 
-# Web Dashboard
+# Container 2 — Web dashboard (run after pipeline completes)
 docker build -f Dockerfile.web -t badminton-web .
 ```
 
