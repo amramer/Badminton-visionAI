@@ -234,8 +234,8 @@ wget -O models/players_poses/yolo_poses_model.pt https://github.com/ultralytics/
 ```
 
 ### For TrackNet and InpaintNet:
-- 1. Download from https://github.com/ChgygLin/TrackNet-pytorch/releases
-- 2. Place both files in models/shuttle_ball_tracking/
+- Download from https://github.com/ChgygLin/TrackNet-pytorch/releases
+- Place both files in models/shuttle_ball_tracking/
 
 ### Verify installation:
 
