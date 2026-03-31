@@ -238,7 +238,10 @@ wget -O models/players_poses/yolo_poses_model.pt https://github.com/ultralytics/
 - 2. Place both files in models/shuttle_ball_tracking/
 
 ### Verify installation:
+
+```bash
 ls -l models/{players_tracking,sam_model,players_poses,shuttle_ball_tracking}/
+```
 
 ### Required directory structure:
 
@@ -251,7 +254,6 @@ models/
     ├── TrackNet_best.pt
     └── InpaintNet_best.pt
 ```
-
 ---
 ## 📖 Usage
 
