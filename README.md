@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="Badminton-VisionAI Logo" width="450"/>
-
-
+<img src="assets/logo.png" alt="Badminton-VisionAI Logo" width="420"/>
 ##### AI-Powered Badminton Performance Analysis System
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
