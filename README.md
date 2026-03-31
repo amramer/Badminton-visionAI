@@ -220,6 +220,39 @@ docker build -f Dockerfile.web -t badminton-web .
 | CUDA (optional) | ≥ 11.8 for GPU inference |
 
 ---
+
+## 📦 Model Setup
+
+This repository does not include pre-trained model weights. Download and place the following models in their respective directories before running the pipeline:
+
+```bash
+# Download all models (run from project root)
+mkdir -p models/{players_tracking,sam_model,players_poses,shuttle_ball_tracking}
+wget -O models/players_tracking/yolov8m.pt https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8m.pt
+wget -O models/sam_model/sam.pth https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+wget -O models/players_poses/yolo_poses_model.pt https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8s-pose.pt
+```
+
+### For TrackNet and InpaintNet:
+# 1. Download from https://github.com/ChgygLin/TrackNet-pytorch/releases
+# 2. Place both files in models/shuttle_ball_tracking/
+
+### Verify installation:
+ls -l models/{players_tracking,sam_model,players_poses,shuttle_ball_tracking}/
+
+### Required directory structure:
+
+```bash
+models/
+├── players_tracking/yolov8m.pt
+├── sam_model/sam.pth
+├── players_poses/yolo_poses_model.pt
+└── shuttle_ball_tracking/
+    ├── TrackNet_best.pt
+    └── InpaintNet_best.pt
+```
+
+---
 ## 📖 Usage
 
 ### 1. Run the Full Pipeline on a Video
