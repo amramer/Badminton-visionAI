@@ -495,7 +495,7 @@ This project is licensed under the **MIT License** — see [LICENSE.txt](LICENSE
 - [TrackNet](https://github.com/qaz812345/TrackNetV3) 
 - [TrackNet+InpaintNet paper](https://dl.acm.org/doi/10.1145/3595916.3626370)
 - [ByteTrack](https://github.com/FoundationVision/ByteTrack) 
-- [Segment Anything (SAM)]([https://github.com/facebookresearch/segment-anything])
+- [SegmentAnything(SAM)](https://github.com/facebookresearch/segment-anything)
 - [Roboflow](https://roboflow.com)
 - [Supervision](https://github.com/roboflow/supervision)
 - [Streamlit](https://streamlit.io) 
