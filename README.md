@@ -235,7 +235,7 @@ wget -O models/players_poses/yolo_poses_model.pt https://github.com/ultralytics/
 
 ### For TrackNet and InpaintNet:
 - Download from [Tracknet-checkpoints](https://drive.google.com/file/d/1CfzE87a0f6LhBp0kniSl1-89zaLCZ8cA/view)
-- Unzip the doanload and place both files(TrackNet_best.pt - InpaintNet_best.pt) in models/shuttle_ball_tracking/
+- Unzip the download and place both files (TrackNet_best.pt - InpaintNet_best.pt) in models/shuttle_ball_tracking/
 
 ### Verify installation:
 
