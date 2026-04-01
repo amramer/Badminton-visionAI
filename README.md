@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![YOLO](https://img.shields.io/badge/Ultralytics-YOLO-00FFFF?style=flat-square)](https://ultralytics.com)
-[![Roboflow](https://img.shields.io/badge/Annotations-Roboflow-6706CE?style=flat-square&logo=roboflow&logoColor=white)](https://roboflow.com)
+[![Roboflow-Supervision](https://img.shields.io/badge/Annotations-Roboflow-6706CE?style=flat-square&logo=roboflow&logoColor=white)](https://roboflow.com)
 [![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
 [![Version](https://img.shields.io/badge/Version-2.1.0-blue?style=flat-square)]()
@@ -451,7 +451,7 @@ outputs/tracking_results/            # Video outputs (read by web.py)
 
 ## 🗺️ Roadmap
 
-- [x] Player detection and tracking (YOLOv8m + SAM ViT-H)
+- [x] Player detection, tracking, and Segmentation (YOLOv8m + ByteTrack + SAM ViT-H)
 - [x] Shuttlecock tracking (TrackNet + InpaintNet)
 - [x] Court keypoint detection and homography projection
 - [x] Shot type classification and power estimation
@@ -491,14 +491,16 @@ This project is licensed under the **MIT License** — see [LICENSE.txt](LICENSE
 
 ## 🙏 Acknowledgements
 
-- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) 
-- [TrackNet](https://github.com/ChgygLin/TrackNet-pytorch) 
-- [InpaintNet](https://github.com/ChgygLin/TrackNet-pytorch) 
-- [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything)
+- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) 
+- [TrackNet](https://github.com/qaz812345/TrackNetV3) 
+- [TrackNet+InpaintNet paper](https://dl.acm.org/doi/10.1145/3595916.3626370)
+- [ByteTrack](https://github.com/FoundationVision/ByteTrack) 
+- [Segment Anything (SAM)]([https://github.com/facebookresearch/segment-anything](https://github.com/facebookresearch/segment-anything/tree/main?tab=readme-ov-file#model-checkpoints))
 - [Roboflow](https://roboflow.com)
 - [Supervision](https://github.com/roboflow/supervision)
 - [Streamlit](https://streamlit.io) 
 - [OpenCV](https://opencv.org)
+- [Nvidia-Cuda](https://developer.nvidia.com/cuda/toolkit)
 
 ---
 
