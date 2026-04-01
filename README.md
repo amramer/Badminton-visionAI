@@ -87,7 +87,7 @@ Heatmap · Players & Shots statistics · Coach report
 ## 🏗️ System Architecture
 
 <div align="center">
-<img src="assets/system-architecture-transparentbg.png">
+<img src="assets/system-architecture.png">
 </div>
 
 ---
