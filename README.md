@@ -11,7 +11,6 @@
 [![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
 [![Version](https://img.shields.io/badge/Version-2.1.0-blue?style=flat-square)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.txt)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)]()
 
 *Computer vision analytics for professional badminton performance*
@@ -469,23 +468,22 @@ outputs/tracking_results/            # Video outputs (read by web.py)
 
 ---
 
-## 🤝 Contributing
-
-Contributions are very welcome! Here's how to get involved:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature-name`
-3. Commit your changes: `git commit -m 'Add: brief description of change'`
-4. Push to your branch: `git push origin feature/your-feature-name`
-5. Open a Pull Request — describe what you did and why
-
-Please check open [Issues](https://github.com/amramer/Badminton-visionAI/issues) before starting work to avoid duplication.
-
----
-
 ## 📄 License
 
-This project is licensed under the **MIT License** — see [LICENSE.txt](LICENSE.txt) for details. You are free to use, modify, and distribute with attribution.
+# Badminton-VisionAI
+
+⚠️ **Proprietary / Restricted License Notice**
+
+This project, including all source code, assets, and documentation, is the exclusive property of **Amr Amer**.  
+
+**Restrictions:**
+1. You may **not redistribute, sell, sublicense, or distribute** any part of this software, in source or binary form, without explicit written permission from the copyright holder.  
+2. You may **not use this software for commercial purposes** without written consent.  
+3. Modification of the software for personal use is allowed **only if it is not redistributed** in any form.  
+
+**Enforcement:** Unauthorized use, distribution, or redistribution of this software may result in legal action.  
+
+Contact: amribrahim.amer@gmail.com for permissions or licensing inquiries.
 
 ---
 
