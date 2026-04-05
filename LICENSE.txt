@@ -1,0 +1,13 @@
+Badminton-VisionAI
+Copyright (c) 2026 Amr Amer
+
+All rights reserved.
+
+This software, including all source code, assets, and documentation, is the exclusive property of Amr Amer.
+
+**Restrictions:**
+1. You may **not redistribute, sell, sublicense, or distribute** any part of this software, in source or binary form, without explicit written permission from the copyright holder.
+2. You may **not use this software for commercial purposes** without written consent.
+3. Modification of the software for personal use is allowed **only if it is not redistributed** in any form.
+
+**Enforcement:** Unauthorized use, distribution, or redistribution of this software may result in legal action.
